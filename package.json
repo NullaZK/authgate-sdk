@@ -1,0 +1,39 @@
+{
+  "name": "@nulla/authgate-sdk",
+  "version": "1.0.0",
+  "description": "SDK for integrating Nulla AuthGate privacy-preserving access keys into Web2 applications",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./browser": "./browser/authgate-client.esm.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "browser/",
+    "example/",
+    "docs/",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["nulla", "authgate", "polkadot", "privacy", "access-keys", "zero-knowledge"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "node --test test/sdk.test.js",
+    "smoke": "node test/smoke.live.js",
+    "live-consume": "node test/live-consume.js",
+    "example": "node example/server.js",
+    "prepublishOnly": "npm test && npm pack --dry-run"
+  },
+  "dependencies": {
+    "@noble/hashes": "^1.8.0",
+    "@polkadot/api": "^15.9.1",
+    "@polkadot/util": "^13.5.5",
+    "@polkadot/util-crypto": "^13.5.5"
+  },
+  "license": "Apache-2.0"
+}
